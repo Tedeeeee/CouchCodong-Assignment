@@ -18,6 +18,8 @@
 ---
 ### 두번째 푸쉬
 -  Controller 를 통해 DTO 의 값을 제대로 전달 받고 리턴(Response) 또한 정확히 나간다는 것을 Postman을 통해 확인
+![Contoler](https://github.com/Tedeeeee/CouchCodong-Assignment/assets/118357403/dde65305-4d3f-49ce-8109-6ffe5729b0dd)
+
 
 --- 
 ### 세번째 푸쉬
@@ -40,3 +42,7 @@
 - Controller 변경
   1. 맨처음 만들어 주었던 Controller 의 기능을 조금 바꿔주었다.
   2. 처음에는 그저 데이터가 잘 들어오는지만 확인하는 controller 에서 카테고리를 만들어주는 controller 로 변환
+  3. response 의 값이 이름만 나오는것이 아닌 id 값까지 가져오고 있는 모습을 볼수 있다.
+ ![postman2](https://github.com/Tedeeeee/CouchCodong-Assignment/assets/118357403/c7c8de8b-edbb-43be-a1f6-4357cd9c4bdc)
+
+
