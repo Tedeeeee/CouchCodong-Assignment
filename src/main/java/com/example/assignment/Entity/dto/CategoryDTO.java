@@ -1,4 +1,4 @@
-package com.example.assignment.controller.dto;
+package com.example.assignment.Entity.dto;
 
 import lombok.Data;
 

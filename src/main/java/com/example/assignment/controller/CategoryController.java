@@ -1,6 +1,6 @@
 package com.example.assignment.controller;
 
-import com.example.assignment.controller.dto.CategoryDTO;
+import com.example.assignment.Entity.dto.CategoryDTO;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
