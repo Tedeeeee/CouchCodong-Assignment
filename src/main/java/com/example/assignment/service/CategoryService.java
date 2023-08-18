@@ -37,4 +37,11 @@ public class CategoryService {
         // 여기에 변경된 Entity 값을 넣고 리턴값으로 줬다
         return categoryRepository.save(cate);
     }
+
+    public Category getCategoryById(Long id) {
+        // Optional 객체의 능력 orElseThrow 는 id 값을 기준으로 해당 id 값인 카테고리를 가져오지만
+        // 그 과정에서 해당 값을 못 가져오면 "존재하지 않는 카테고리입니다." 라는 메세지를 보낸다
+        return categoryRepository.findById(id).orElseThrow(
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 카테고리 입니다"));
+    }
 }
