@@ -4,6 +4,8 @@ import com.example.assignment.Entity.Category;
 import com.example.assignment.Entity.dto.CategoryDTO;
 import com.example.assignment.service.CategoryService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,5 +25,10 @@ public class CategoryController {
     public Category getCategoryById(@PathVariable Long id) {
         // id 값을 기준으로 해당 카테고리를 불러온다.
         return categoryService.getCategoryById(id);
+    }
+
+    @GetMapping("")
+    public Page<Category> getCategories(Pageable pageable, @RequestParam String keyword) {
+        return categoryService.getCategories(pageable, keyword);
     }
 }

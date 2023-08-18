@@ -5,6 +5,8 @@ import com.example.assignment.Entity.dto.CategoryDTO;
 import com.example.assignment.repository.CategoryRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -43,5 +45,15 @@ public class CategoryService {
         // 그 과정에서 해당 값을 못 가져오면 "존재하지 않는 카테고리입니다." 라는 메세지를 보낸다
         return categoryRepository.findById(id).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 카테고리 입니다"));
+    }
+
+    // keyword 를 기준으로
+    public Page<Category> getCategories(Pageable pageable, String keyword) {
+        System.out.println(pageable.toString());
+        if (keyword == null) {
+            return categoryRepository.findAll(pageable);
+        } else {
+            return categoryRepository.findByNameContains(pageable, keyword);
+        }
     }
 }
