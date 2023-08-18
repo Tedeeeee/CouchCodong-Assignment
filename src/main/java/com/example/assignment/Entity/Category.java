@@ -1,15 +1,14 @@
 package com.example.assignment.Entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 // Entity 는 JPA 의 설정
 // 즉 해당 클래스는 데이터베이스에서 Entity 에 해당한다는 뜻이다
 @Entity
 @Getter
 @ToString
+@NoArgsConstructor
 public class Category {
 
     // 해당 값은 해당 테이블의 PK 값이다 라고 선언 ( 직접 할당 )
