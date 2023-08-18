@@ -1,12 +1,15 @@
 package com.example.assignment.Entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
 @Getter
 @ToString
+@NoArgsConstructor
 public class Memo {
 
     @Id
@@ -27,4 +30,13 @@ public class Memo {
     // 해당 컬럼에 들어갈 데이터의 저장 방식은 TEXT 형식으로 저장 될 것이다.
     @Column(columnDefinition = "TEXT")
     String content;
+
+    @Builder
+    public Memo(Long id, Category category, String name, String content) {
+        this.id = id;
+        this.category = category;
+        this.name = name;
+        this.content = content;
+    }
+
 }
