@@ -23,3 +23,20 @@
 ### 세번째 푸쉬
 - Entity 에 JPA 를 활용하여 객체를 조정해서 진행하는 과정을 보여준다. 다양한 기능이 있다는 것을 보여준다.
 - Entity 에 사용된 JPA 는 주석처리로 설명을 해놓았다.
+
+---
+### 네번째 푸쉬
+- Entity 와 Controller 를 연결하고 원하는 Service 를 만들기
+- 데이터 베이스와 가까운 Repository 생성
+  1. 인터페이스를 통해 Repository 설정 ( 데이터를 어떻게 다룰까 하는 추상메소드 작성 )
+  2. Repository 는 JPA 를 상속시켜 주는데 제네릭 값으로는 <다룰값, 다룰 객체의 id 값(Long)> 으로 지정한다.
+  3. JPA 는 기본적으로 findById, findAll, save, delete 등 다양한 로직을 제공한다.
+  4. Optional 은 null 값을 가질수 있는 Category 객체를 만들어 준다.
+  5. 또한 Optional 은 isEmpty, elseOrThrow, isPresent 등 코드를 더욱 깔끔하게 작성할 수 있게 해준다.
+- Service 생성 ( Repository 를 의존성 주입하여 생성)
+  1. Service 는 클라이언트(소비자)에 가깝게 위치해 있는 클래스이다.
+  2. 사용자가 느낄 수 있는 기본적인 기능을 준다. ( EX)createCategory )
+  3. service 의 메소드 내용은 안에 적어놓았습니다.
+- Controller 변경
+  1. 맨처음 만들어 주었던 Controller 의 기능을 조금 바꿔주었다.
+  2. 처음에는 그저 데이터가 잘 들어오는지만 확인하는 controller 에서 카테고리를 만들어주는 controller 로 변환
